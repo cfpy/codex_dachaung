@@ -1,0 +1,9 @@
+images = loadMNISTImages('../data/mnist/fashion/train-images-idx3-ubyte');
+labels = loadMNISTLabels('../data/mnist/fashion/train-labels-idx1-ubyte');
+x_test = loadMNISTImages('../data/mnist/fashion/t10k-images-idx3-ubyte');
+y_test = loadMNISTLabels('../data/mnist/fashion/t10k-labels-idx1-ubyte');
+x_train = images(:,1:50000);
+y_train = zeros(10,50000);
+y_train((1:50000)*10-9+labels(1:50000)) = 1;
+x_valid = images(:,50001:end);
+y_valid = labels(50001:end);
